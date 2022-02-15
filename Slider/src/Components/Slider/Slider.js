@@ -11,11 +11,37 @@ export default function Slider() {
   })
 
   const nextSlide = () => {
-    console.log('NEXT')
+    if(slideAnim.index !== dataSlider.length && !slideAnim.inProgress){
+      setSlideAnim({index: slideAnim.index + 1, inProgress: true})
+      setTimeout(() =>{
+        setSlideAnim({index: slideAnim.index + 1,
+        inProgress: false})
+      }, 400)
+    }
+    else if(slideAnim.index === dataSlider.length && !slideAnim.inProgress){
+      setSlideAnim({index: 1, inProgress: true})
+      setTimeout(() =>{
+        setSlideAnim({index: 1,
+        inProgress: false})
+      }, 400)
+    }
   }
 
   const prevSlide = () => {
-    console.log('PREV')
+    if(slideAnim.index !== 1 && !slideAnim.inProgress){
+      setSlideAnim({index: slideAnim.index - 1, inProgress: true})
+      setTimeout(() =>{
+        setSlideAnim({index: slideAnim.index - 1,
+        inProgress: false})
+      }, 400)
+    }
+    else if(slideAnim.index === 1 && !slideAnim.inProgress){
+      setSlideAnim({index: 5, inProgress: true})
+      setTimeout(() =>{
+        setSlideAnim({index: 5,
+        inProgress: false})
+      }, 400)
+    }
   }
 
 
@@ -32,7 +58,7 @@ export default function Slider() {
           )
         })}
         <BtnSlider moveSlide={nextSlide} direction={"next"}/>
-        <BtnSlider prevSlide={prevSlide} direction={"prev"}/>
+        <BtnSlider moveSlide={prevSlide} direction={"prev"}/>
     </div>
   )
 }
