@@ -5,6 +5,9 @@ import CardBegin from './Infos/CardBegin'
 import CardEnd from './Infos/CardEnd'
 import DietForm from './SubForms/DietForm'
 import FoodStyle from './SubForms/FoodStyle'
+import Allergies from './SubForms/Allergies'
+import HateLove from './SubForms/HateLove'
+
 
 export default function MultiForm() {
 
@@ -33,7 +36,9 @@ export default function MultiForm() {
       {formIndex === 1 ? <CardBegin modifyIndex={modifyIndex}/> : 
        formIndex === 2 ? <DietForm modifyIndex={modifyIndex}/> :
        formIndex === 3 ? <FoodStyle modifyIndex={modifyIndex}/> :
-       ""}
+       formIndex === 4 ? <Allergies modifyIndex={modifyIndex}/> :
+       formIndex === 5 ? <HateLove modifyIndex={modifyIndex}/> :
+       formIndex === 6 ? <CardEnd modifyIndex={modifyIndex}/> : ""}
     </div>
   )
 }
