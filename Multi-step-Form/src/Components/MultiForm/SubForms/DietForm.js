@@ -6,7 +6,7 @@ export default function DietForm(props) {
   const [formData, setFormData] = useState({
     dietForm: 'nodiet'
   })
-  const handleRadio = () => {
+  const handleRadio = (e) => {
     setFormData({
       dietForm: e.target.value
     })
