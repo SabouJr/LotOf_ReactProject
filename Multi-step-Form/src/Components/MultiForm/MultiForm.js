@@ -4,6 +4,7 @@ import Indicator from './Indicator/Indicator'
 import CardBegin from './Infos/CardBegin'
 import CardEnd from './Infos/CardEnd'
 import DietForm from './SubForms/DietForm'
+import FoodStyle from './SubForms/FoodStyle'
 
 export default function MultiForm() {
 
@@ -31,6 +32,7 @@ export default function MultiForm() {
       <Indicator/>
       {formIndex === 1 ? <CardBegin modifyIndex={modifyIndex}/> : 
        formIndex === 2 ? <DietForm modifyIndex={modifyIndex}/> :
+       formIndex === 3 ? <FoodStyle modifyIndex={modifyIndex}/> :
        ""}
     </div>
   )
